@@ -1,0 +1,11 @@
+#!/usr/bin/python2
+#
+# spotify-ob-wrapper v0.1
+# by Bas Dalenoord, mijn.me.uk
+# Copyright (c) 2012 All rights reserved 
+#
+# This project is licensed under the BSD license. See the 
+# LICENSE file for details.
+
+import sys
+import dbus
