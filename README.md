@@ -21,11 +21,11 @@ as it is being worked on.
 
 Details
 =======
-spotify-ob-wrapper v0.1
-by Bas Dalenoord, mijn.me.uk
-Copyright (c) 2012 All rights reserved
-
+spotify-ob-wrapper v0.1    
+by Bas Dalenoord, mijn.me.uk    
+Copyright (c) 2012 All rights reserved    
+    
 This project is licensed under the BSD license. See the LICENSE file for 
-details.
+details.    
 
 Please report any bugs/issues through GitHub.
