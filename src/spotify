@@ -7,5 +7,25 @@
 # This project is licensed under the BSD license. See the 
 # LICENSE file for details.
 
+# Various imports
 import sys
 import dbus
+import os
+import subprocess
+import time
+
+try: # Try to enable notifications
+    from gi.repository import Notify
+    print "Notifications enabled"
+    ENABLE_NOTIFICATIONS = True
+except: # Enabling notifications failed
+    print "Notifications disabled"
+    ENABLE_NOTIFICATIONS = False
+    
+# Change the line below this comment if you've installed Spotify to  
+# a different location (see Installation section of the README)
+spotify_dir = "/usr/bin/spotify"
+
+class SpotifyDBus(dbus.service.Object): # Spotify DBus object
+	def __init__(self, conn, object_path = "/org/mpris/MediaPlayer2"):
+		dbus.service.Object.__init(self, conn, object_path)
