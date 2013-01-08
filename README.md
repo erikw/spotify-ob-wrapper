@@ -1,25 +1,26 @@
 Spotify Openbox Wrapper
 ======================
 
-This project provides support for notifications and control through
-your keyboard media keys for Spotify when you are using Openbox.
+This project provides support for notifications to Spotify. I designed this
+script for OpenBox, but it might be usable under different WM's anyway.
 
 The script uses the Spotify-DBus-interface to control the client.
 
-Many thanks to [John Reese](https://github.com/jreese/spotify-gnome) for 
-this excellent idea and the great script he created.
+Many thanks to [Stuart Colville](http://muffinresearch.co.uk/archives/2011/03/23/linux-spotify-track-notifier-with-added-d-bus-love/) for 
+this excellent idea and the great script he created, and to [Abhijeet Rastogi](http://blog.abhijeetr.com/2012/01/spotify-song-change-notifications-with.html)
+for the modifications to use Spotify's own album art. I used part of the
+code from [John Reese](https://github.com/jreese/spotify-gnome) to make
+this script launch the actual Spotify client.
 
 Requirements
 ============
  - python2
  - python2-notify
- - OpenBox
+ - python2-gobject
+ - libnotify
 
 Installation
 ============
-Installation of the script isn't yet particularly useful but if you'd
-like to install it anyways, follow instructions below.
-
 Verify the installation directory of Spotify
     
     $ which spotify    
@@ -41,7 +42,7 @@ soon.
 
 Details
 =======
-spotify-ob-wrapper v0.1    
+spotify-ob-wrapper v0.2    
 by Bas Dalenoord, mijn.me.uk    
 Copyright (c) 2012 All rights reserved    
     
