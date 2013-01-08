@@ -35,7 +35,7 @@ that is precedent over the location of your Spotify binary.
     sudo cp bin/spotify /usr/local/bin && sudo chmod 755 /usr/local/bin/spotify    
     
 Launching Spotify should now result in launching the wrapper first, which
-will launch the official client after binding to the keys and DBus-interface.    
+will launch the official client and stay running in the background.
     
 Binding to your media keys is not yet possible, but this section will follow
 soon.
