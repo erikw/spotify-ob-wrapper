@@ -29,3 +29,24 @@ spotify_dir = "/usr/bin/spotify"
 class SpotifyDBus(dbus.service.Object): # Spotify DBus object
 	def __init__(self, conn, object_path = "/org/mpris/MediaPlayer2"):
 		dbus.service.Object.__init(self, conn, object_path)
+		
+class WrapperMain(object):
+	def __init__(self):
+		pid = os.fork()
+		
+		if pid == 0: # Launch Spotify client
+			time.sleep(1)
+			print "Launching Spotify client"
+			self.spotify = None
+			args = [spotify_dir]
+			os.execv(spotify_dir, args)
+			
+		else: # Set up wrapper
+			print "Connecting to DBus"
+			bus = dbus.SessionBus()
+			player = bus.get_object('com.spotify.qt', '/')
+			iface = dbus.Interface(player, 'org.freedesktop.MediaPlayer2')
+			
+if __name__ == "__main__":
+	WrapperMain()
+			
