@@ -27,7 +27,7 @@ Verify the installation directory of Spotify
     /usr/bin/spotify
 
 If Spotify was installed in a different directory you'll need to
-change `spotify_bin` to the directory of your installation.    
+change `SPOTIFY_BIN` to the directory of your installation.    
     
 Copy `src/spotify` to `/usr/local/bin/spotify` or another directory
 that is precedent over the location of your Spotify binary.
