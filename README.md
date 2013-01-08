@@ -22,8 +22,8 @@ like to install it anyways, follow instructions below.
 
 Verify the installation directory of Spotify
     
-    `$ which spotify    
-    /usr/bin/spotify`
+    $ which spotify    
+    /usr/bin/spotify
 
 If Spotify was installed in a different directory you'll need to
 change `spotify_bin` to the directory of your installation.    
@@ -31,7 +31,7 @@ change `spotify_bin` to the directory of your installation.
 Copy `src/spotify` to `/usr/local/bin/spotify` or another directory
 that is precedent over the location of your Spotify binary.
 
-    `sudo cp bin/spotify /usr/local/bin && sudo chmod 755 /usr/local/bin/spotify`    
+    sudo cp bin/spotify /usr/local/bin && sudo chmod 755 /usr/local/bin/spotify    
     
 Launching Spotify should now result in launching the wrapper first, which
 will launch the official client after binding to the keys and DBus-interface.    
