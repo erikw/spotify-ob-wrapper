@@ -11,13 +11,33 @@ this excellent idea and the great script he created.
 
 Requirements
 ============
- - Python2
- - ...
+ - python2
+ - python2-notify
+ - OpenBox
 
 Installation
 ============
-Installation is not yet possible. Keep an eye out for this repo though, 
-as it is being worked on.
+Installation of the script isn't yet particularly useful but if you'd
+like to install it anyways, follow instructions below.
+
+ 1. Verify the installation directory of Spotify
+    
+    `$ which spotify
+    /usr/bin/spotify`
+
+    If Spotify was installed in a different directory you'll need to
+    change `spotify_bin` to the directory of your installation.
+
+ 2. Copy `src/spotify` to `/usr/local/bin/spotify` or another directory
+    that is precedent over the location of your Spotify binary.
+
+    `sudo cp bin/spotify /usr/local/bin && sudo chmod 755 /usr/local/bin/spotify`
+
+ 3. Launching Spotify should now result in launching the wrapper first, which
+    will launch the official client after binding to the keys and DBus-interface.
+
+ 4. Binding to your media keys is not yet possible, but this section will follow
+    soon.
 
 Details
 =======
