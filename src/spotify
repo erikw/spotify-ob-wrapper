@@ -106,7 +106,8 @@ class SpotifyNotifier(object):
                         image_path = MISSING
 
                 if image_path != MISSING:
-                    alert = Notify.Notification.new(title.replace("&","&amp;"),"by <b>%s</b> from <b>%s</b>" % (artist.replace("&","&amp;"), album.replace("&","&amp;")), image_path)
+                    #alert = Notify.Notification.new(title.replace("&","&amp;"),"by <b>%s</b> from <b>%s</b>" % (artist.replace("&","&amp;"), album.replace("&","&amp;")), image_path)
+                    alert = Notify.Notification.new("Spotify NP: ","<b>%s</b> - <b>%s</b> - <b>%s</b>" % (artist.replace("&","&amp;"), album.replace("&","&amp;"), title.replace("&","&amp;")), image_path)
                     alert.show()
 
 
