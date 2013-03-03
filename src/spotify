@@ -51,7 +51,7 @@ class SpotifyNotifier(object):
         else:
 			bus_loop = DBusGMainLoop(set_as_default=True)
 			self.bus = dbus.SessionBus(mainloop=bus_loop)
-			loop = GObject.MainLoop()
+			self.loop = GObject.MainLoop()
 			self.http = httplib2.Http(HTTP_CACHE_DIR)
 			self.notify_id = None
 			try:
@@ -66,7 +66,7 @@ class SpotifyNotifier(object):
 											self.handle_name_owner_changed,
 											arg0="org.mpris.MediaPlayer2.spotify")
 
-			loop.run()
+			self.loop.run()
 
     def props_changed_listener(self):
         self.spotify = self.bus.get_object("org.mpris.MediaPlayer2.spotify",
@@ -80,6 +80,7 @@ class SpotifyNotifier(object):
                 self.props_changed_listener()
             else:
                 self.spotify = None
+                self.loop.quit()
 
     def handle_properties_changed(self, interface, changed_props, invalidated_props):
         metadata = changed_props.get("Metadata", {})
